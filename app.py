@@ -24,12 +24,8 @@ def index():
 class RegisterForm(Form):
     name = StringField('Name', [validators.Length(min=1, max=50)])
     email = StringField('Email', [validators.Length(min=6, max=50)])
-    password = PasswordField('Password', [
-        validators.DataRequired()
-    ])
-   
-    age = StringField('Age',[validators.Length(min=6, max=50)])
-   
+    age = StringField('Age',[validators.DataRequired()])
+    password = PasswordField('Password', [validators.DataRequired()])
     
 
 # User Registeration
@@ -39,12 +35,12 @@ def register():
     if request.method == 'POST' and form.validate():
         name = form.name.data
         email = form.email.data
-        age = form.email.data
+        age = form.age.data
         password = sha256_crypt.hash(str(form.password.data))
         print(str(form.password.data)+': '+password)
         conn = get_db_connection()
-        conn.execute("INSERT INTO users (name, email,age,password) VALUES (?, ?,? ?)",
-                     (name, email,age,password))
+        conn.execute("INSERT INTO users (name, email, age, password) VALUES (?, ?, ?, ?)",
+                     (name, email, age, password))
         conn.commit()
         conn.close()
         flash("You are now registered and can Login", "success")
