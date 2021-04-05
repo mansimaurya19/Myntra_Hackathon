@@ -21,7 +21,7 @@ import cv2
 import random
 import plotly.express as px
 
-!pip install -q hvplot
+#!pip install -q hvplot
 import hvplot.pandas  # custom install
 
 from glob import glob
@@ -32,7 +32,7 @@ import missingno as msno
 
 """**CSV Files**"""
 
-metadata = pd.read_csv('/content/gdrive/MyDrive/Myntra_Hackathon/data/images_metadata.csv')
+metadata = pd.read_csv(r'C:\Users\dell\Desktop\data\images_metadata.csv')
 metadata.sample(5)
 
 metadata.sample(5)
@@ -40,11 +40,12 @@ metadata.sample(5)
 """**Image folders**"""
 
 #Image Folder Paths
-north_jpg_directory = '/content/gdrive/MyDrive/Myntra_Hackathon/data/images/north'
-northeast_jpg_directory = '/content/gdrive/MyDrive/Myntra_Hackathon/data/images/north-east'
-east_jpg_directory = '/content/gdrive/MyDrive/Myntra_Hackathon/data/images/east'
-south_jpg_directory = '/content/gdrive/MyDrive/Myntra_Hackathon/data/images/south'
-western_jpg_directory = '/content/gdrive/MyDrive/Myntra_Hackathon/data/images/western'
+# north_jpg_directory = r'../../data/images/north'
+north_jpg_directory = r'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/north'
+northeast_jpg_directory = r'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/north-east'
+east_jpg_directory = r'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/east'
+south_jpg_directory = r'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/south'
+western_jpg_directory = r'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/western'
 
 def getImagePaths(path):
     """
@@ -56,7 +57,8 @@ def getImagePaths(path):
     image_names = []
     for dirname, _, filenames in os.walk(path):
         for filename in filenames:
-            fullpath = os.path.join(dirname, filename)
+            # fullpath = os.path.join(dirname, filename)
+            fullpath = dirname[38:] + '/' + filename
             image_names.append(fullpath)
     return image_names
 
@@ -79,6 +81,7 @@ def display_multiple_img(images_paths, rows, cols):
                 rows(int) - No. of Rows in Output
                 cols(int) - No. of Columns in Output
     """
+   
     figure, ax = plt.subplots(nrows=rows,ncols=cols,figsize=(40,20) )
     for ind,image_path in enumerate(images_paths):
         image=cv2.imread(image_path)
@@ -91,32 +94,33 @@ def display_multiple_img(images_paths, rows, cols):
     plt.tight_layout()
     plt.show()
 
-display_multiple_img(south_images_path[:], 5, 5)
+# display_multiple_img(south_images_path[:], 5, 5)
 
 def clean_region(region):
-  region = re.sub('\s+', '', region.lower())
+  region = re.sub('/s+', '', region.lower())
   return region
 
 def search(query_region):
-  query_region = clean_region(query_region)
+  # query_region = clean_region(query_region)
   if query_region == 'north':
     image_path = random.sample(north_images_path, 16)
-  elif query_region == 'northeast':
+  elif query_region == 'north-east':
     image_path = random.sample(northeast_images_path, 16)
   elif query_region == 'east':
-    image_path = random.sample(east_images_path, 10)
+    image_path = random.sample(east_images_path, 9)
   elif query_region == 'south':
     image_path = random.sample(south_images_path, 16)
   elif query_region == 'western':
     image_path = random.sample(western_images_path, 16)
-  return display_multiple_img(image_path, 4, 4)
+  # return display_multiple_img(image_path, 4, 4)
+  return image_path
 
-search('north')
+# search('north')
 
-search('east')
+# search('east')
 
-search('south')
+# search('south')
 
 import random
 
-random.sample(north_images_path,10)
+# random.sample(north_images_path,10)
