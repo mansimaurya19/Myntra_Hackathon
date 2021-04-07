@@ -84,9 +84,13 @@ def display_multiple_img(images_paths, rows, cols):
    
     figure, ax = plt.subplots(nrows=rows,ncols=cols,figsize=(40,20) )
     for ind,image_path in enumerate(images_paths):
+        
         image=cv2.imread(image_path)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) 
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        image_name = image_path.split('/')[-1]
+        title = metadata[metadata['images'] == image_name]['title'].tolist()[0]
         try:
+            ax.ravel()[ind].set_title(title)
             ax.ravel()[ind].imshow(image)
             ax.ravel()[ind].set_axis_off()
         except:

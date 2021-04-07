@@ -70,36 +70,16 @@ east_images_path = sorted(getImagePaths(east_jpg_directory))
 south_images_path = sorted(getImagePaths(south_jpg_directory))
 western_images_path = sorted(getImagePaths(western_jpg_directory))
 
-def display_multiple_img(images_paths, rows, cols):
+def display_multiple_img(images_paths, region):
     """
-    Function to Display Images from Dataset.
+    Function to Return Images from Dataset as JSON.
     
-    parameters: images_path(string) - Paths of Images to be displayed
-                rows(int) - No. of Rows in Output
-                cols(int) - No. of Columns in Output
+    parameters: images_path for the selected region
+                region is selected region
     """
-    figure, ax = plt.subplots(nrows=rows,ncols=cols,figsize=(40,20) )
-    for ind,image_path in enumerate(images_paths):
+    
         
-        image = cv2.imread(image_path)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        image_name = image_path.split('/')[-1]
-        title = metadata[metadata['images'] == image_name]['title']
-        print(title)
-        title = title.tolist()
-        print(title)
-        if(len(title)):
-          title= title[0]
-        else:
-          title = "Dress"
-        try:
-            ax.ravel()[ind].set_title(title)
-            ax.ravel()[ind].imshow(image)
-            ax.ravel()[ind].set_axis_off()
-        except:
-            continue;
-    plt.tight_layout()
-    plt.show()
+        
 
 def clean_region(region):
   region = re.sub('\s+', '', region.lower())
@@ -117,7 +97,7 @@ def search(query_region):
     image_path = south_images_path
   elif query_region == 'western':
     image_path = western_images_path
-  return display_multiple_img(image_path[:15], 5, 3)
+  return display_multiple_img(image_path,query_region)
 
 search('north')
 
