@@ -25,7 +25,7 @@ import plotly.express as px
 
 """**CSV Files**"""
 gdrive_csv = '/content/gdrive/MyDrive/Myntra_Hackathon/data/images_metadata.csv'
-local_csv = 'C:/Users/dell/Desktop/data/images_metadata.csv'
+local_csv = 'C:/Users/DishaKhattri/Desktop/data/images_metadata.csv'
 metadata = pd.read_csv(local_csv)
 # metadata = pd.read_csv(gdrive_csv)
 metadata.sample(5)
