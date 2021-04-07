@@ -21,13 +21,6 @@ import cv2
 import random
 import plotly.express as px
 
-# !pip install -q hvplot
-# import hvplot.pandas  # custom install
-
-# from glob import glob
-
-# from urllib import request
-
 # import missingno as msno
 
 """**CSV Files**"""
@@ -42,33 +35,13 @@ metadata.sample(5)
 """**Image folders**"""
 
 #Image Folder Paths
-common = 'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/'
-north_jpg_directory = common + 'north'
-northeast_jpg_directory = common + 'north-east'
-east_jpg_directory = common + 'east'
-south_jpg_directory = common + 'south'
-western_jpg_directory = common + 'western'
+common = '/static/images/'
+north_jpg_directory = common + 'north/'
+northeast_jpg_directory = common + 'north-east/'
+east_jpg_directory = common + 'east/'
+south_jpg_directory = common + 'south/'
+western_jpg_directory = common + 'western/'
 
-def getImagePaths(path):
-    """
-    Function to Combine Directory Path with individual Image Paths
-    
-    parameters: path(string) - Path of directory
-    returns: image_names(string) - Full Image Path
-    """
-    image_names = []
-    for dirname, _, filenames in os.walk(path):
-        for filename in filenames:
-            fullpath = os.path.join(dirname, filename)
-            image_names.append(fullpath)
-    return image_names
-
-#Get complete image paths for all the regions
-north_images_path = sorted(getImagePaths(north_jpg_directory))
-northeast_images_path = sorted(getImagePaths(northeast_jpg_directory))
-east_images_path = sorted(getImagePaths(east_jpg_directory))
-south_images_path = sorted(getImagePaths(south_jpg_directory))
-western_images_path = sorted(getImagePaths(western_jpg_directory))
 
 def display_multiple_img(images_paths, region):
     """
@@ -77,8 +50,13 @@ def display_multiple_img(images_paths, region):
     parameters: images_path for the selected region
                 region is selected region
     """
-    
-        
+    dataframe = metadata[metadata['region']==region]
+    print(dataframe)
+    for i in dataframe.index:
+      dataframe.loc[i,'images'] = images_paths + dataframe.loc[i,'images']
+      
+    dataframe = dataframe[['images','title']]  
+    return dataframe
         
 
 def clean_region(region):
@@ -88,17 +66,17 @@ def clean_region(region):
 def search(query_region):
   query_region = clean_region(query_region)
   if query_region == 'north':
-    image_path = north_images_path
-  elif query_region == 'northeast':
-    image_path = northeast_images_path
+    image_path = north_jpg_directory
+  elif query_region == 'north-east':
+    image_path = northeast_jpg_directory
   elif query_region == 'east':
-    image_path = east_images_path
+    image_path = east_jpg_directory
   elif query_region == 'south':
-    image_path = south_images_path
+    image_path = south_jpg_directory
   elif query_region == 'western':
-    image_path = western_images_path
+    image_path = western_jpg_directory
   return display_multiple_img(image_path,query_region)
 
-search('north')
+# search('north')
 
-search('south')
+# search('south')

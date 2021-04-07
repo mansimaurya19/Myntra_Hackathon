@@ -3,7 +3,7 @@ from flask import Flask, render_template, flash, redirect, url_for, session, req
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from functools import wraps
-from region_search import search
+from idiot import search
 
 
 def get_db_connection():
@@ -115,9 +115,9 @@ def register():
 #      return render_template("dashboard.html")
 @app.route('/region/<string:region>',methods=['GET'])
 def north(region):
-    images = search(region)
-    print(images)
-    return render_template("results.html",images=images)
+    df = search(region)
+    print(df)
+    return render_template("results.html",data=df)
 
 
 if __name__ == '__main__':

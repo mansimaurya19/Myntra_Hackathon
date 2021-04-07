@@ -258,9 +258,11 @@
 <body>
 <div class="container">
     <div class="row">
-        {% for path in images %}
+        {% for i in data.index %}
         <div class="col-3">
-            <img src="{{path}}" alt="Dress" width="100px" height="auto">
+            <img src="{{data['images'][i]}}" alt="Dress" width="120px" height="130px"> <br>
+
+            <h3{font-size: 0.005em;} >{{data['title'][i]}}</h3>
         </div>
         {% endfor %}
     </div>
