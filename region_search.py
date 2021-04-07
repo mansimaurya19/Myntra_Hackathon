@@ -32,7 +32,7 @@ import missingno as msno
 
 """**CSV Files**"""
 
-metadata = pd.read_csv(r'C:\Users\dell\Desktop\data\images_metadata.csv')
+metadata = pd.read_csv(r'C:\Users\DishaKhattri\Desktop\data\images_metadata.csv')
 metadata.sample(5)
 
 metadata.sample(5)
@@ -41,11 +41,11 @@ metadata.sample(5)
 
 #Image Folder Paths
 # north_jpg_directory = r'../../data/images/north'
-north_jpg_directory = r'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/north'
-northeast_jpg_directory = r'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/north-east'
-east_jpg_directory = r'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/east'
-south_jpg_directory = r'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/south'
-western_jpg_directory = r'C:/Users/dell/Desktop/Myntra_Hackathon/static/images/western'
+north_jpg_directory = r'C:/Users/DishaKhattri/Desktop/Myntra_Hackathon/static/images/north'
+northeast_jpg_directory = r'C:/Users/DishaKhattri/Desktop/Myntra_Hackathon/static/images/north-east'
+east_jpg_directory = r'C:/Users/DishaKhattri/Desktop/Myntra_Hackathon/static/images/east'
+south_jpg_directory = r'C:/Users/DishaKhattri/Desktop/Myntra_Hackathon/static/images/south'
+western_jpg_directory = r'C:/Users/DishaKhattri/Desktop/Myntra_Hackathon/static/images/western'
 
 def getImagePaths(path):
     """
@@ -58,7 +58,7 @@ def getImagePaths(path):
     for dirname, _, filenames in os.walk(path):
         for filename in filenames:
             # fullpath = os.path.join(dirname, filename)
-            fullpath = dirname[38:] + '/' + filename
+            fullpath = dirname[46:] + '/' + filename
             image_names.append(fullpath)
     return image_names
 
