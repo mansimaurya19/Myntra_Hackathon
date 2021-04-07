@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-    <title>Quintessentials</title>
+    <title>Fosters</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
     <meta name="keywords" content="Fashion Hub Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -16,7 +16,21 @@
             window.scrollTo(0, 1);
         }
     </script>-->
+
+    <link href="../static/images/favicon.png" rel="icon">
     <!-- Custom Theme files -->
+    <link rel="stylesheet" href="{{ url_for ( 'static',filename='others/aos/aos.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for ( 'static',filename='others/animate.css/animate.min.css/aos.css') }}"> 
+
+    <link rel="stylesheet" href="{{ url_for ( 'static',filename='others/glightbox/css/glightbox.min.css') }}"> 
+
+    <link rel="stylesheet" href="{{ url_for ( 'static',filename='others/swiper/swiper-bundle.min.css') }}"> 
+
+    <!-- <link rel="stylesheet" href="../static/others/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../static/others/aos/aos.css">
+    <link rel="stylesheet" href="../static/others/glightbox/css/glightbox.min.css">
+    <link rel="stylesheet" href="../static/others/swiper/swiper-bundle.min.css"> -->
+    <!-- <link rel="stylesheet" href="../static/others/bootstrap/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="{{ url_for ( 'static',filename='css/bootstrap.css') }}"> 
     <link rel="stylesheet" href="{{ url_for ('static' , filename='css/shop.css')}}" >
     <link rel="stylesheet" href="{{ url_for ('static' , filename='css/owl.carousel.min.css')}}">
@@ -111,19 +125,20 @@
             </nav>-->
             <!-- //top nav -->
             <!-- bottom nav -->
-            <nav class="navbar navbar-expand-lg navbar-light justify-content-center top_nav d-flex pt-3 pb-1">
+            <nav class="navbar navbar-expand-lg navbar-light   top_nav d-flex pt-3 pb-1 ">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                   <!-- logo -->
                   <h1>
-                    <a class="navbar-brand" href="index.html">fh
-                    </a>
+                    <img src="{{url_for('static',filename='images/log.png' )}}" style="max-height: 65px;">
+                  <!--  <a class="navbar-brand" href="index.html">fh
+                    </a>-->
                 </h1>
                 <!-- //logo -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mx-auto text-center">
+                    <ul class="navbar-nav " style="margin-left: auto;">
                         <li class="nav-item">
                             <a class="nav-link  active" href="index.html">HOME
                                 <span class="sr-only">(current)</span>
@@ -209,7 +224,7 @@
                             <a class="nav-link" href="blog.html">Blog</a>
                         </li>-->
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="contact.html">CONTACT</a>
                         </li>
                         <div class="w3ls_right_nav ml-auto d-flex">
                         <div class="nav-icon d-flex">
@@ -242,111 +257,107 @@
     </header>
     <!-- //header -->
     <!-- banner -->
-    <div class="banner-text">
-        <div class="callbacks_container">
-            <ul class="rslides" id="slider3">
-                <li class="banner">
-                    <div class="container">
-                        <h3 class="agile_btxt">
-                            <span>f</span>ashion
-                            <span>h</span>ub
-                        </h3>
-                        <h4 class="w3_bbot">shop exclusive clothing</h4>
-                        <div class="slider-info mt-sm-5">
-                            <h4 class="bn_right">
-                                <span>w</span>omen's
-                                <span>f</span>ashion</h4>
-                            <div class="bnr_clip position-relative">
-                                <h4>get up to
-                                    <span class="px-2">45% </span>
-                                </h4>
-                                <div class="d-inline-flex flex-column banner-pos position-absolute text-center">
-                                    <div class="bg-flex-item">
-                                        <span>O</span>
-                                    </div>
-                                    <div class="bg-flex-item">
-                                        <span>F</span>
-                                    </div>
-                                    <div class="bg-flex-item">
-                                        <span>F
-                                        </span>
-                                    </div>
-                                </div>
-                                <p class="text-uppercase py-2">on special sale</p>
-                                <a class="btn btn-primary mt-3 text-capitalize" href="shop.html" role="button">shop now</a>
-                            </div>
-                        </div>
+    
+
+    <section id="events" class="events" style="margin-top: 20px";>
+
+        <div class="container" data-aos="fade-up">
+  
+          <!-- <div class="section-title">
+            <h2>Events</h2>
+            <p>Organize Your Events in our Restaurant</p>
+          </div> -->
+  
+          <div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+  
+              <div class="swiper-slide">
+                <div class="row event-item">
+                  <div class="col-lg-12">
+                    <img src="../static/images/final_mundu.jpg" class="img-fluid" alt="">
+                  </div>
+                  <!-- <div class="col-lg-6 pt-4 pt-lg-0 content">
+                    <h3>Birthday Parties</h3>
+                    <div class="price">
+                      <p><span>$189</span></p>
                     </div>
-                </li>
-                <li class="banner banner2">
-                    <div class="container">
-                        <h3 class="agile_btxt">
-                            <span>f</span>ashion
-                            <span>h</span>ub
-                        </h3>
-                        <h4 class="w3_bbot">shop exclusive clothing</h4>
-                        <div class="slider-info mt-sm-5">
-                            <h4 class="bn_right">
-                                <span>m</span>en's
-                                <span>f</span>ashion</h4>
-                            <div class="bnr_clip position-relative">
-                                <h4>get up to
-                                    <span class="px-2">35% </span>
-                                </h4>
-                                <div class="d-inline-flex flex-column banner-pos position-absolute text-center">
-                                    <div class="bg-flex-item">
-                                        <span>O</span>
-                                    </div>
-                                    <div class="bg-flex-item">
-                                        <span>F</span>
-                                    </div>
-                                    <div class="bg-flex-item">
-                                        <span>F
-                                        </span>
-                                    </div>
-                                </div>
-                                <p class="text-uppercase py-2">on special sale</p>
-                                <a class="btn btn-primary mt-3 text-capitalize" href="shop.html" role="button">shop now</a>
-                            </div>
-                        </div>
+                    <p class="fst-italic">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                      magna aliqua.
+                    </p>
+                    <ul>
+                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                      <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                    </ul>
+                    <p>
+                      Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                      velit esse cillum dolore eu fugiat nulla pariatur
+                    </p>
+                  </div> -->
+                </div>
+              </div><!-- End testimonial item -->
+  
+              <div class="swiper-slide">
+                <div class="row event-item">
+                  <div class="col-lg-12">
+                    <img src="../static/images/final_40.jpg" class="img-fluid" alt="">
+                  </div>
+                  <!-- <div class="col-lg-6 pt-4 pt-lg-0 content">
+                    <h3>Private Parties</h3>
+                    <div class="price">
+                      <p><span>$290</span></p>
                     </div>
-                </li>
-                <li class="banner banner3">
-                    <div class="container">
-                        <h3 class="agile_btxt">
-                            <span>f</span>ashion
-                            <span>h</span>ub
-                        </h3>
-                        <h4 class="w3_bbot">shop exclusive clothing</h4>
-                        <div class="slider-info mt-sm-5">
-                            <h4 class="bn_right">
-                                <span>k</span>id's
-                                <span>f</span>ashion</h4>
-                            <div class="bnr_clip position-relative">
-                                <h4>get up to
-                                    <span class="px-2">45% </span>
-                                </h4>
-                                <div class="d-inline-flex flex-column banner-pos position-absolute text-center">
-                                    <div class="bg-flex-item">
-                                        <span>O</span>
-                                    </div>
-                                    <div class="bg-flex-item">
-                                        <span>F</span>
-                                    </div>
-                                    <div class="bg-flex-item">
-                                        <span>F
-                                        </span>
-                                    </div>
-                                </div>
-                                <p class="text-uppercase py-2">on special sale</p>
-                                <a class="btn btn-primary mt-3 text-capitalize" href="shop.html" role="button">shop now</a>
-                            </div>
-                        </div>
+                    <p class="fst-italic">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                      magna aliqua.
+                    </p>
+                    <ul>
+                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                      <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                    </ul>
+                    <p>
+                      Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                      velit esse cillum dolore eu fugiat nulla pariatur
+                    </p>
+                  </div> -->
+                </div>
+              </div><!-- End testimonial item -->
+  
+              <div class="swiper-slide">
+                <div class="row event-item">
+                  <div class="col-lg-12">
+                    <img src="../static/images/final_400.jpg" class="img-fluid" alt="">
+                  </div>
+                  <!-- <div class="col-lg-6 pt-4 pt-lg-0 content">
+                    <h3>Custom Parties</h3>
+                    <div class="price">
+                      <p><span>$99</span></p>
                     </div>
-                </li>
-            </ul>
+                    <p class="fst-italic">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                      magna aliqua.
+                    </p>
+                    <ul>
+                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                      <li><i class="bi bi-check-circled"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                      <li><i class="bi bi-check-circled"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                    </ul>
+                    <p>
+                      Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                      velit esse cillum dolore eu fugiat nulla pariatur
+                    </p>
+                  </div> -->
+                </div>
+              </div><!-- End testimonial item -->
+  
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+  
         </div>
-    </div>
+      </section><!-- End Events Section -->
     <!-- //banner -->
     <!--services-->
     <!--<div class="agileits-services" id="services">
@@ -405,22 +416,22 @@
     <!-- product tabs -->
     <section class="tabs_pro py-md-5 pt-sm-3 pb-5">
         <h5 class="head_agileinfo text-center text-capitalize pb-5">
-            <span>s</span>mart clothing</h5>
+            <span>r</span>egional trends</h5>
         <div class="tabs tabs-style-line pt-md-5">
             <nav class="container">
                 <ul id="clothing-nav" class="nav nav-tabs tabs-style-line" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#women" id="women-tab" role="tab" data-toggle="tab" aria-controls="women" aria-expanded="true">Women's Fashion</a>
+                        <a class="nav-link active" href="#women" id="women-tab" role="tab" data-toggle="tab" aria-controls="women" aria-expanded="true">NORTH</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#men" role="tab" id="men-tab" data-toggle="tab" aria-controls="men">Men's Fashion
-                        </a>
+                        <a class="nav-link" href="#men" role="tab" id="men-tab" data-toggle="tab" aria-controls="men">SOUTH
+                       </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#girl" role="tab" id="girl-tab" data-toggle="tab" aria-controls="girl">Girl's Fashion</a>
+                        <a class="nav-link" href="#girl" role="tab" id="girl-tab" data-toggle="tab" aria-controls="girl">NORTH-EAST</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#boy" role="tab" id="boy-tab" data-toggle="tab" aria-controls="boy">Boy's Fashion</a>
+                        <a class="nav-link" href="#boy" role="tab" id="boy-tab" data-toggle="tab" aria-controls="boy">WESTERN</a>
                     </li>
                 </ul>
             </nav>
@@ -432,7 +443,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="../theme/images/pf1.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/north/_001.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="womens.html" class="link-product-add-cart">Quick View</a>
@@ -441,10 +452,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Self Design Women's Tunic</h5>
+                                    <h5 class="card-title text-capitalize">Rajasthani Chaniya Choli</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$28.00</p>
-                                        <p class="line-through">$35.99</p>
+                                        <p class="text-dark font-weight-bold">28.00</p>
+                                        <p class="line-through">35.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -467,7 +478,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pf2.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/north/_049.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="womens.html" class="link-product-add-cart">Quick View</a>
@@ -476,10 +487,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Embroidered Women's Tunic</h5>
+                                    <h5 class="card-title text-capitalize">Salwaar-Kameez</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$24.99</p>
-                                        <p class="line-through">$29.99</p>
+                                        <p class="text-dark font-weight-bold">24.99</p>
+                                        <p class="line-through">29.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -502,7 +513,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pf3.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/north/_003.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="womens.html" class="link-product-add-cart">Quick View</a>
@@ -511,10 +522,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Sleeveless Women's Top</h5>
+                                    <h5 class="card-title text-capitalize">Rajasthani Bridal Lehenga</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$20.99</p>
-                                        <p class="line-through">$26.99</p>
+                                        <p class="text-dark font-weight-bold">20.99</p>
+                                        <p class="line-through">26.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -538,7 +549,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pf9.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/north/_033.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="womens.html" class="link-product-add-cart">Quick View</a>
@@ -547,10 +558,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Slim Women's Blue Jeans</h5>
+                                    <h5 class="card-title text-capitalize">Ladakh changpa</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$19.99</p>
-                                        <p class="line-through">$24.99</p>
+                                        <p class="text-dark font-weight-bold">19.99</p>
+                                        <p class="line-through">24.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -573,7 +584,8 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pf11.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/south/_051.jpg')}}" alt="img" class="card-img-top">
+                                    
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="womens.html" class="link-product-add-cart">Quick View</a>
@@ -619,7 +631,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pm1.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/south/_051.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="mens.html" class="link-product-add-cart">Quick View</a>
@@ -628,10 +640,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Solid Formal Black Shirt</h5>
+                                    <h5 class="card-title text-capitalize">Kerela Dhoti-Shirt</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$40.00</p>
-                                        <p class="line-through">$50.99</p>
+                                        <p class="text-dark font-weight-bold">40.00</p>
+                                        <p class="line-through">50.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -654,7 +666,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pm2.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/south/_064.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="mens.html" class="link-product-add-cart">Quick View</a>
@@ -663,10 +675,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Solid Formal Brown Shirt</h5>
+                                    <h5 class="card-title text-capitalize">Mundu & Neraithi</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$24.99</p>
-                                        <p class="line-through">$35.99</p>
+                                        <p class="text-dark font-weight-bold">24.99</p>
+                                        <p class="line-through">35.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -689,7 +701,7 @@
                         <div class="item">
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="../web/images/pm11.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/south/_060.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="mens.html" class="link-product-add-cart">Quick View</a>
@@ -698,10 +710,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Black Casual Men's Blazer</h5>
+                                    <h5 class="card-title text-capitalize"> Kurta & Mundu</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$20.00</p>
-                                        <p class="line-through">$25.00</p>
+                                        <p class="text-dark font-weight-bold">20.00</p>
+                                        <p class="line-through">25.00</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -724,7 +736,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pt1.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/south/_065.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="mens.html" class="link-product-add-cart">Quick View</a>
@@ -733,10 +745,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Slim Fit Men's Black Trousers</h5>
+                                    <h5 class="card-title text-capitalize">Kanjivaram Saree</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$14.99</p>
-                                        <p class="line-through">$18.99</p>
+                                        <p class="text-dark font-weight-bold">14.99</p>
+                                        <p class="line-through">18.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -842,7 +854,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pg1.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/north-east/_078.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="girl.html" class="link-product-add-cart">Quick View</a>
@@ -851,10 +863,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Midi/Knee Length Casual Dress</h5>
+                                    <h5 class="card-title text-capitalize">North-East Chakhesang</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$20.00</p>
-                                        <p class="line-through">$39.99</p>
+                                        <p class="text-dark font-weight-bold">20.00</p>
+                                        <p class="line-through">39.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -877,7 +889,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pg2.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/north-east/_095.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="girl.html" class="link-product-add-cart">Quick View</a>
@@ -886,10 +898,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Midi/Knee Length Casual Dress</h5>
+                                    <h5 class="card-title text-capitalize">Tripura Traditional Dress</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$24.99</p>
-                                        <p class="line-through">$34.99</p>
+                                        <p class="text-dark font-weight-bold">24.99</p>
+                                        <p class="line-through">34.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -912,7 +924,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pg3.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/north-east/_081.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="girl.html" class="link-product-add-cart">Quick View</a>
@@ -921,10 +933,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Midi/Knee Length Party Dress</h5>
+                                    <h5 class="card-title text-capitalize">Mao Naga Tribal Dress</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$14.99</p>
-                                        <p class="line-through">$27.99</p>
+                                        <p class="text-dark font-weight-bold">14.99</p>
+                                        <p class="line-through">27.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -947,15 +959,15 @@
                             <!-- card -->
                             <div class="card product-men p-3 out_w3">
                                 <div class="men-thumb-item position-relative">
-                                    <img src="images/pg7.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/north-east/_079.jpg')}}" alt="img" class="card-img-top">
                                     <span class="px-2 position-absolute">out of stock</span>
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Girls Party Top and Skirt Set</h5>
+                                    <h5 class="card-title text-capitalize">Nagaland Chuchuyimlang</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$19.00</p>
-                                        <p class="line-through">$25.00</p>
+                                        <p class="text-dark font-weight-bold">19.00</p>
+                                        <p class="line-through">25.00</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -1052,7 +1064,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pb1.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/western/_108.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="boy.html" class="link-product-add-cart">Quick View</a>
@@ -1061,10 +1073,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Shirt, Waistcoat and Pant Set</h5>
+                                    <h5 class="card-title text-capitalize">Formals Jeans and Top</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$21.00</p>
-                                        <p class="line-through">$39.99</p>
+                                        <p class="text-dark font-weight-bold">21.00</p>
+                                        <p class="line-through">39.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -1087,7 +1099,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pb2.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/western/_116.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="boy.html" class="link-product-add-cart">Quick View</a>
@@ -1096,10 +1108,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Festive Kurta and Pyjama Set</h5>
+                                    <h5 class="card-title text-capitalize">Formal Coat-Pant Set </h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$19.99</p>
-                                        <p class="line-through">$29.99</p>
+                                        <p class="text-dark font-weight-bold">19.99</p>
+                                        <p class="line-through">29.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -1122,7 +1134,7 @@
                             <!-- card -->
                             <div class="card product-men p-3">
                                 <div class="men-thumb-item">
-                                    <img src="images/pb3.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/western/_102.jpg')}}" alt="img" class="card-img-top">
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="boy.html" class="link-product-add-cart">Quick View</a>
@@ -1131,10 +1143,10 @@
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Boys Casual Shirt and Jeans</h5>
+                                    <h5 class="card-title text-capitalize">Casual One-Piece Dress</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$17.99</p>
-                                        <p class="line-through">$24.99</p>
+                                        <p class="text-dark font-weight-bold">17.99</p>
+                                        <p class="line-through">24.99</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -1157,15 +1169,15 @@
                             <!-- card -->
                             <div class="card product-men p-3 out_w3">
                                 <div class="men-thumb-item position-relative">
-                                    <img src="images/pb7.jpg" alt="img" class="card-img-top">
+                                    <img src="{{url_for('static', filename='images/western/_111.jpg')}}" alt="img" class="card-img-top">
                                     <span class="px-2 position-absolute">out of stock</span>
                                 </div>
                                 <!-- card body -->
                                 <div class="card-body  py-3 px-2">
-                                    <h5 class="card-title text-capitalize">Casual Blazer,Shirt and Trouser Set</h5>
+                                    <h5 class="card-title text-capitalize">Casual Shirt and Trouser Set</h5>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p class="text-dark font-weight-bold">$18.00</p>
-                                        <p class="line-through">$26.00</p>
+                                        <p class="text-dark font-weight-bold">18.00</p>
+                                        <p class="line-through">26.00</p>
                                     </div>
                                 </div>
                                 <!-- card footer -->
@@ -2037,7 +2049,14 @@
     <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static' , filename='others/aos/aos.js')}}"></script>
+    <script src="{{ url_for('static' , filename='others/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static' , filename='others/glightbox/js/glightbox.min.js')}}"></script>
+    <script src="{{ url_for('static' , filename='others/swiper/swiper-bundle.min.js')}}"></script>
+    <script src="{{ url_for('static' , filename='js/main.js')}}"></script>
     <script src="{{ url_for('static' , filename='js/bootstrap.js')}}"></script>
+    
+    
 </body>
 
 </html>
