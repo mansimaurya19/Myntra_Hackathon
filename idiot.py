@@ -25,7 +25,8 @@ import plotly.express as px
 
 """**CSV Files**"""
 gdrive_csv = '/content/gdrive/MyDrive/Myntra_Hackathon/data/images_metadata.csv'
-local_csv = 'C:/Users/DishaKhattri/Desktop/data/images_metadata.csv'
+# local_csv = 'C:/Users/dell/Desktop/data/images_metadata.csv'
+local_csv = 'images_metadata.csv'
 metadata = pd.read_csv(local_csv)
 # metadata = pd.read_csv(gdrive_csv)
 metadata.sample(5)
@@ -51,11 +52,12 @@ def display_multiple_img(images_paths, region):
                 region is selected region
     """
     dataframe = metadata[metadata['region']==region]
-    print(dataframe)
+    # print(dataframe)
     for i in dataframe.index:
       dataframe.loc[i,'images'] = images_paths + dataframe.loc[i,'images']
       
-    dataframe = dataframe[['images','title']]  
+    dataframe = dataframe[['images','title']] 
+    # dataframe = dataframe[['images','title','price']]  
     return dataframe
         
 

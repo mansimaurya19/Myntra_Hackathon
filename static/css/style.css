@@ -1387,7 +1387,7 @@ ul.bottom-links-agile li a {
 .testi-w3agileinfo .nav-tabs li a {
     text-decoration: none;
     outline: none;
-    -webkit-transition: 0.5s all;
+   /* -webkit-transition: 0.5s all;*/
     padding: 0;
     margin: 0;
     border: none;
