@@ -51,11 +51,12 @@ def display_multiple_img(images_paths, region):
                 region is selected region
     """
     dataframe = metadata[metadata['region']==region]
-    print(dataframe)
+    # print(dataframe)
     for i in dataframe.index:
       dataframe.loc[i,'images'] = images_paths + dataframe.loc[i,'images']
       
-    dataframe = dataframe[['images','title']]  
+    dataframe = dataframe[['images','title']] 
+    # dataframe = dataframe[['images','title','price']]  
     return dataframe
         
 

@@ -45,7 +45,14 @@
     <!-- //online-fonts -->
     <!--style of this page-->
     <style>
+    .prod{
+        height: 300px;
+        box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    }
 
+    .prod:hover {
+        box-shadow: 0 0 11px rgba(35, 119, 158, 0.2); 
+    }
 
     </style>
 </head>
@@ -260,9 +267,16 @@
     <div class="row">
         {% for i in data.index %}
         <div class="col-3">
-            <img src="{{data['images'][i]}}" alt="Dress" width="130px" height="200px"> <br>
-
-            <h3{font-size: 0.005em;} >{{data['title'][i]}}</h3>
+            <div class="card p-3 my-2 mx-1 bg-white rounded prod">
+                <div class="text-muted">
+                    <div class="text-center">
+                        <img src="{{data['images'][i]}}" alt="Dress" width="130px" height="200px"> 
+                        <h3 style="font-size: 1em;" class="mt-3">{{data['title'][i]}}</h3>
+                        
+                    </div>
+                </div>
+            </div>
+            
         </div>
         {% endfor %}
     </div>
