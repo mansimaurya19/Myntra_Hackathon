@@ -67,6 +67,7 @@ def clean_region(region):
 
 def search(query_region):
   query_region = clean_region(query_region)
+  image_path = query_region
   if query_region == 'north':
     image_path = north_jpg_directory
   elif query_region == 'north-east':

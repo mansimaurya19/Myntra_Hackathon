@@ -24,10 +24,27 @@ def index():
 
 @app.route('/voice',methods=['POST'])
 def voice():
-    query = request.form['voice_query']
-   # print(query)
-   # path = speech_text(query)
-   # print(path)
+    query = request.form['voice_query'].lower()
+    tokens = query.split()
+    print(tokens)
+    if "north" in tokens:
+        if "east" in tokens or "eastern" in tokens:
+            return redirect('http://localhost:5000/region/north-east')
+        else:
+            return redirect('http://localhost:5000/region/north')
+    elif "west" in tokens or "western" in tokens:
+        return redirect('http://localhost:5000/region/western')
+    elif "south" in tokens or "southern" in tokens:
+        return redirect('http://localhost:5000/region/south') 
+    elif "east" in tokens or "eastern" in tokens:
+        return redirect('http://localhost:5000/region/east')
+    elif "northeastern" in tokens:
+        return redirect('http://localhost:5000/region/north-east')
+
+
+
+
+    
     return render_template("home.html")
    
 
