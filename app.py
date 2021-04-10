@@ -19,6 +19,10 @@ app = Flask(__name__)
 def index():
  return render_template("home.html")
 
+@app.route('/contact.html')
+def contact():
+ return render_template("contact.html")
+
 
 
 #Registeration Form
