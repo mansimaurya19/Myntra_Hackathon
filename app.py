@@ -13,7 +13,6 @@ def get_db_connection():
     return conn
 
 
-
 app = Flask(__name__)
 
 @app.route('/')
