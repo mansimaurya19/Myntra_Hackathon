@@ -56,8 +56,8 @@ def display_multiple_img(images_paths, region):
     for i in dataframe.index:
       dataframe.loc[i,'images'] = images_paths + dataframe.loc[i,'images']
       
-    dataframe = dataframe[['images','title']] 
-    # dataframe = dataframe[['images','title','price']]  
+    # dataframe = dataframe[['images','title']] 
+    dataframe = dataframe[['images','title','price']]  
     return dataframe
         
 
