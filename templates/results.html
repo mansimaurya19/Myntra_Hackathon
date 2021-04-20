@@ -17,7 +17,7 @@
         }
     </script>-->
 
-   
+    <link rel="stylesheet" href="{{ url_for ( 'static',filename='css/cart_styles.css') }}">    
     <link rel=" shortcut icon" href="{{ url_for( 'static' ,filename='images/favicon.ico')}}" >
     <!-- Custom Theme files -->
     <link rel="stylesheet" href="{{ url_for ( 'static',filename='others/aos/aos.css') }}"> 
@@ -47,7 +47,7 @@
     <!-- //online-fonts -->
     
     <!--style of this page-->
-    <style>
+    <!-- <style>
     .prod{
         height: 300px;
         box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -57,7 +57,11 @@
         box-shadow: 0 0 11px rgba(35, 119, 158, 0.2); 
     }
 
-    </style>
+    </style> -->
+    
+ 
+    <script src="{{ url_for('static' , filename='js/store.js')}}" async></script>
+    <script src="store.js" async></script>
 </head>
 
 <body>
@@ -272,26 +276,55 @@
         <!-- //header container -->
     </header>
 <body>
-<div class="container">
-    <div class="row">
+<!-- <div class="container">
+    <div class="row"> -->
         {% for i in data.index %}
-        <div class="col-3">
+        <!-- <div class="col-3">
             <div class="card p-3 my-2 mx-1 bg-white rounded prod">
                 <div class="text-muted">
                     <div class="text-center">
                         <img src="{{data['images'][i]}}" alt="Dress" width="130px" height="200px"> 
                         <h3 style="font-size: 1em;" class="mt-3">{{data['title'][i]}}</h3>
                         <h3 style="font-size: 1em;" class="mt-2">{{data['price'][i]}}</h3>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
             </div>
-            
+        </div> -->
+        <section class="container content-section">
+            <!-- <h2 class="section-header">MUSIC</h2> -->
+            <div class="shop-items">
+        <div class="shop-item">
+            <span class="shop-item-title">{{data['title'][i]}}</span>
+            <img class="shop-item-image" src="{{data['images'][i]}}">
+            <div class="shop-item-details">
+                <span class="shop-item-price">{{data['price'][i]}}</span>
+                <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+            </div>
         </div>
+        </div>
+        </section>
         {% endfor %}
+    <!-- </div>
+
+</div> -->
+
+
+<section class="container content-section">
+    <h2 class="section-header">CART</h2>
+    <div class="cart-row">
+        <span class="cart-item cart-header cart-column">ITEM</span>
+        <span class="cart-price cart-header cart-column">PRICE</span>
+        <span class="cart-quantity cart-header cart-column">QUANTITY</span>
     </div>
-
-</div>
-
+    <div class="cart-items">
+    </div>
+    <div class="cart-total">
+        <strong class="cart-total-title">Total</strong>
+        <span class="cart-total-price">$0</span>
+    </div>
+    <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+</section>
 
 
 <footer>

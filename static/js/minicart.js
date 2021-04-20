@@ -2636,7 +2636,7 @@
         before: '\u20b4'
       },
       USD: {
-        before: '$',
+        before: '₹',
         code: true
       },
       UYU: {
