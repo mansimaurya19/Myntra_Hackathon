@@ -98,6 +98,6 @@ def cosine_similarity_T(k, query):
         a.loc[j,'Score'] = simScore
     return a
 
-print(cosine_similarity_T(10, 'Red Kurta for girls'))
+#print(cosine_similarity_T(10, 'Red Kurta for girls'))
 
 # cosine_similarity_T(10, 'Straight kurta blue size M')

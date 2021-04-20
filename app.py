@@ -5,6 +5,9 @@ from passlib.hash import sha256_crypt
 from functools import wraps
 from idiot import search
 from  search_cosine_similarity import cosine_similarity_T
+import pandas as pd
+import numpy as np
+import random
 # from asr_myntra import speech_text
 
 
@@ -52,7 +55,18 @@ def voice():
     print(dataframe)
     return render_template("results.html",data=dataframe)
     
-   
+@app.route('/product/<string:id>',methods=['GET'])
+def prodDetails(id):
+    df = pd.read_csv('Myntra_dataset.csv')
+    # print(type(df['uniq_id'][0]))
+    details = pd.DataFrame()
+    details = df[df['uniq_id'] == id]
+    print("One Product")
+    print(details)
+    for i in details.index:
+        details.loc[i,'price'] = random.randint(500, 5000)
+    
+    return render_template("single.html",data=details)
 
 
 
