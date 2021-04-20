@@ -73,7 +73,7 @@ def search(query_region):
   elif query_region == 'north-east':
     image_path = northeast_jpg_directory
   elif query_region == 'east':
-    image_path = east_jpg_directory
+    image_path = east_jpg_directory 
   elif query_region == 'south':
     image_path = south_jpg_directory
   elif query_region == 'western':
