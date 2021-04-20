@@ -48,7 +48,7 @@ def index():
 def voice():
     query = request.form['voice_query'].lower()
     print(query)
-    dataframe = cosine_similarity_T(10,query)
+    dataframe = cosine_similarity_T(50,query)
     print(dataframe)
     return render_template("results.html",data=dataframe)
     
