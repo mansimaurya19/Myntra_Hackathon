@@ -55,6 +55,16 @@ def voice():
     print(dataframe)
     return render_template("results.html",data=dataframe)
     
+
+
+@app.route('/add',methods=['POST'])
+def add():
+    query = request.form['add-query'].lower()
+    print(query)
+   
+    return render_template("home.html")
+    
+
 @app.route('/product/<string:id>',methods=['GET'])
 def prodDetails(id):
     df = pd.read_csv('Myntra_dataset.csv')
