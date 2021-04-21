@@ -9,15 +9,12 @@ Original file is located at
 import random
 import pandas as pd
 import numpy as np
-import os 
 import re
 import operator
 import nltk 
 import string
 from nltk.tokenize import word_tokenize
-from nltk import pos_tag
 from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -25,7 +22,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # nltk.download('punkt')
 # nltk.download('wordnet')
 # nltk.download('averaged_perceptron_tagger')
-#nltk.download('stopwords')
+# nltk.download('stopwords')
   
 # df = pd.read_csv('/content/Myntra_dataset.csv')
 df = pd.read_csv('Myntra_dataset.csv')
@@ -71,9 +68,8 @@ def cosine_sim(a, b):
 
 def cosine_similarity_T(k, query):
     preprocessed_query = re.sub("\W+", " ", query.lower()).strip()
+    preprocessed_query = ' '.join([word for word in preprocessed_query.split(' ')[2:]])
     tokens = word_tokenize(str(preprocessed_query))
-    # q_df = pd.DataFrame(columns=['q_clean'])
-    # q_df.loc[0,'q_clean'] =tokens
     d_cosines = []
     
     query_vector = gen_vector_T(tokens)
