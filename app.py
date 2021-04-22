@@ -64,7 +64,7 @@ def voice():
     query = request.form['voice_query'].lower()
     tokens = query.split()
     print(tokens)
-    if "north" in tokens:
+    if "north" in tokens or "northern" in tokens:
         if "east" in tokens or "eastern" in tokens:
             return redirect('http://localhost:5000/region/north-east')
         else:
@@ -89,6 +89,7 @@ def voice():
         print(query)
         dataframe = cosine_similarity_T(10,query)
         print(dataframe)
+        return render_template("results.html",data=dataframe)
     return render_template("results.html",data=dataframe)
     
 
@@ -112,7 +113,7 @@ def add(id,q):
     elif "quantity" in tokens and s:
         qty=s[0]
         return render_template("add.html",data=details, qty=qty)
-    elif "place" in tokens or "complete" in tokens or "done" in tokens:
+    elif "place" in tokens or "complete" in tokens or "done" in tokens or "order" in tokens:
         return render_template("order.html",data=details,qty=qty)
 
 
