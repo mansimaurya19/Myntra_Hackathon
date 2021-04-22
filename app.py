@@ -25,26 +25,26 @@ def index():
 
 
 
-@app.route('/voice',methods=['POST'])
-def voice():
-    query = request.form['voice_query'].lower()
-    tokens = query.split()
-    print(tokens)
-    if "north" in tokens:
-        if "east" in tokens or "eastern" in tokens:
-            return redirect('http://localhost:5000/region/north-east')
-        else:
-            return redirect('http://localhost:5000/region/north')
-    elif "west" in tokens or "western" in tokens:
-        return redirect('http://localhost:5000/region/western')
-    elif "south" in tokens or "southern" in tokens:
-        return redirect('http://localhost:5000/region/south') 
-    elif "east" in tokens or "eastern" in tokens:
-        return redirect('http://localhost:5000/region/east')
-    elif "northeastern" in tokens:
-        return redirect('http://localhost:5000/region/north-east')
+# @app.route('/voice',methods=['POST'])
+# def voice():
+#     query = request.form['voice_query'].lower()
+#     tokens = query.split()
+#     print(tokens)
+#     if "north" in tokens:
+#         if "east" in tokens or "eastern" in tokens:
+#             return redirect('http://localhost:5000/region/north-east')
+#         else:
+#             return redirect('http://localhost:5000/region/north')
+#     elif "west" in tokens or "western" in tokens:
+#         return redirect('http://localhost:5000/region/western')
+#     elif "south" in tokens or "southern" in tokens:
+#         return redirect('http://localhost:5000/region/south') 
+#     elif "east" in tokens or "eastern" in tokens:
+#         return redirect('http://localhost:5000/region/east')
+#     elif "northeastern" in tokens:
+#         return redirect('http://localhost:5000/region/north-east')
     
-    return render_template("home.html")
+#     return render_template("home.html")
 
 
 def prodDetails(id):
@@ -62,9 +62,33 @@ def prodDetails(id):
 @app.route('/voice',methods=['POST'])
 def voice():
     query = request.form['voice_query'].lower()
-    print(query)
-    dataframe = cosine_similarity_T(10,query)
-    print(dataframe)
+    tokens = query.split()
+    print(tokens)
+    if "north" in tokens:
+        if "east" in tokens or "eastern" in tokens:
+            return redirect('http://localhost:5000/region/north-east')
+        else:
+            return redirect('http://localhost:5000/region/north')
+        return render_template("home.html")        
+    elif "west" in tokens or "western" in tokens:
+        return redirect('http://localhost:5000/region/western')
+        return render_template("home.html") 
+    elif "south" in tokens or "southern" in tokens:
+        return redirect('http://localhost:5000/region/south') 
+        return render_template("home.html") 
+    elif "east" in tokens or "eastern" in tokens:
+        return redirect('http://localhost:5000/region/east')
+        return render_template("home.html") 
+    elif "northeastern" in tokens:
+        return redirect('http://localhost:5000/region/north-east')
+        return render_template("home.html") 
+    elif "home" in tokens or "homepage" in tokens:
+        return redirect('http://localhost:5000/')
+        return render_template("home.html")         
+    else:    
+        print(query)
+        dataframe = cosine_similarity_T(10,query)
+        print(dataframe)
     return render_template("results.html",data=dataframe)
     
 
@@ -91,9 +115,10 @@ def add(id,q):
     elif "place" in tokens or "complete" in tokens or "done" in tokens:
         return render_template("order.html",data=details,qty=qty)
 
-    
+
     return render_template("single.html",data=details,qty=1)
-    
+
+
 
 @app.route('/product/<string:id>',methods=['GET'])
 def giveProd(id):
@@ -109,7 +134,7 @@ def giveProd(id):
 def north(region):
     df = search(region)
     print(df)
-    return render_template("results.html",data=df)
+    return render_template("results_region.html",data=df)
 
 
 if __name__ == '__main__':
