@@ -43,6 +43,30 @@
         box-shadow: 0 0 11px rgba(35, 119, 158, 0.2); 
     }
 
+     .cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #333;
+}
+
+/*.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+.cart-quantity-input {
+    width: 35%;
+} */
+.cart-quantity-input{
+    resize: none;
+    width:55px;
+    height:28px;
+}
+
+
     </style>
 </head>
 
@@ -206,7 +230,7 @@
                     </div>
                     <div class="col-2"><h5 style="color: orange;">&#8377; {{data['price'][i]}}</h5></div>
                     <div class="col-1" class="text-center"><h5>{{data['size'][i]}}</h5></div>
-                    <div class="col-1" class="text-center"><h5>1</h5></div>
+                    <input class= " cart-quantity-input cart-header cart-column" type="number" value="1">
                     <div class="col-2">
                         <a class="btn btn-danger small" href="#add_btn" data-toggle="modal" data-target="#add_btn">
                             Cancel
@@ -412,6 +436,30 @@
 
         });
     </script>
+    <!--script for quantity in cart modal-->
+    <!-- <script>
+        
+        function ready() {
+    
+
+    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+    for (var i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i]
+        input.addEventListener('change', quantityChanged)
+    }
+
+    
+
+    // document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+}
+        function quantityChanged(event) {
+            var input = event.target
+            if (isNaN(input.value) || input.value <= 0) {
+                input.value = 1
+            }
+
+        }
+    </script> -->
 
  <script src="{{ url_for('static' , filename='js/SmoothScroll.min.js')}}"></script>
     <script src="{{ url_for('static' , filename='others/aos/aos.js')}}"></script>
