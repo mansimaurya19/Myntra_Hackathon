@@ -25,6 +25,9 @@
     <!-- Owl-Carousel-CSS -->
     <link rel="stylesheet" href="{{ url_for ('static' , filename= 'css/style.css')}}"  >
     <!-- font-awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="{{ url_for ('static' , filename= 'css/fontawesome-all.min.css')}}"> 
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
@@ -83,7 +86,10 @@
                 
             <!-- Voice Search Modal -->
             {% include 'voice.html' %}
-    
+
+             <!-- ADD CART MODEL -->
+            {% include 'voice_add.html' %}
+           
             <!-- //top nav -->
             <!-- bottom nav -->
             <nav class="navbar navbar-expand-lg navbar-light   top_nav d-flex pt-3 pb-1 ">
@@ -164,6 +170,7 @@
 <body>
 <div class="container">
     <div class="card p-4">
+       
     
     {% for i in data.index %}
     <div class="row">
@@ -185,10 +192,15 @@
                 <a class="btn btn-primary" href="#add_btn" data-toggle="modal" data-target="#add_btn">
                     Add To Cart
                 </a>
+                <a class="text-dark login_btn align-self-center mx-3" href="#myAdd_btn" data-toggle="modal" data-target="#myAdd_btn">
+                    <i class="fas fa-microphone"></i>
+                </a>
             </div>
         </div>
     </div>
+   
     {% endfor %}
+    
         
 </div>
 
