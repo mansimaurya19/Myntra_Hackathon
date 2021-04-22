@@ -19,12 +19,14 @@ from collections import defaultdict
 from nltk.corpus import wordnet as wn
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-nltk.download('punkt')
-nltk.download('wordnet')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('stopwords')
+#nltk.download('punkt')
+#nltk.download('wordnet')
+#nltk.download('averaged_perceptron_tagger')
+#nltk.download('stopwords')
 
-df = pd.read_csv('/content/Myntra_dataset.csv')
+#df = pd.read_csv('/content/Myntra_dataset.csv')
+
+df = pd.read_csv('Myntra_dataset.csv')
 df.sample(5)
 
 df['total_info'] = df['dominant_color'] + str(' ') +	df['product_type'] + str(' size ') + df['size']
@@ -99,7 +101,7 @@ def cosine_similarity_T(k, query):
     else:
       return df1
 
-cosine_similarity_T(20, 'show me saree size onesize')
+#print(cosine_similarity_T(20, 'show me saree size onesize'))
 
-cosine_similarity_T(20, 'search for red kurta size L')
+#cosine_similarity_T(20, 'search for red kurta size L')
 

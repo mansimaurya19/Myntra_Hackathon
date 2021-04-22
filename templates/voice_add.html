@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body pt-3 pb-5 px-sm-5">
                 {% for i in data.index %}
-                <form action="/add/{{data['uniq_id'][i]}}" method="POST"  id="add-form">
+                <form action="/add/{{data['uniq_id'][i]}}/{{qty}}" method="POST"  id="add-form">
                   <input name="add_query" type="text" placeholder="Speak to add" autocomplete="off" autofocus>
                 </form>
                 {% endfor %}

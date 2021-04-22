@@ -268,49 +268,50 @@
         <!-- //header container -->
     </header>
     <body>
-        <div class="container mb-5">
-        <div class="row m-2">
-            <div class="col-6"><h5><strong>Product</strong></h5></div>
-            <div class="col-2"><h5><strong>Price</strong></h5></div>
-            <div class="col-1"><h5><strong>Size</strong></h5></div>
-            <div class="col-1"><h5><strong>Quantity</strong></h5></div>
-        </div>
-        <hr >
-        {% for i in data.index %}
-        <div class="row">
-            <div class="col-6">
-                <div class="row">
-                    <div class="col-5">
-                        <!-- Photo -->
-                        <img src="{{data['images'][i]}}" alt="image" width="100%" height="auto" style="object-fit: cover;">
+        <div class='container mb-5'>
+            <div class="text-center">
+                <img src="{{ url_for('static',filename='images/green_tick.png')}}" width="10%">
+                <h3> Your Order Was Successful!!</h3>
+            </div> 
+            <div class='text-muted'>
+                <h5>Order Details</h5>
+                <hr>
+                
+                    <div class="row m-2">
+                        <div class="col-6"><h5><strong>Product</strong></h5></div>
+                        <div class="col-2"><h5><strong>Price</strong></h5></div>
+                        <div class="col-1"><h5><strong>Size</strong></h5></div>
+                        <div class="col-1"><h5><strong>Quantity</strong></h5></div>
+                        <div class="col-2"><h5><strong>Total</strong></h5></div>
                     </div>
-                    <div class="col-7">
-                        <!-- Details -->
-                        <h4 style="color: green;">{{data['title'][i]}}</h3>
+                    <hr >
+                    {% for i in data.index %}
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-5">
+                                    <!-- Photo -->
+                                    <img src="{{data['images'][i]}}" alt="image" width="100%" height="auto" style="object-fit: cover;">
+                                </div>
+                                <div class="col-7">
+                                    <!-- Details -->
+                                    <h4 style="color: green;">{{data['title'][i]}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2"><h5 style="color: orange;">&#8377; {{data['price'][i]}}</h5></div>
+                        <div class="col-1" class="text-center"><h5>{{data['size'][i]}}</h5></div>
+                        <div class="col-1" class="text-center"><h5>{{qty}}</h5></div>
+                        <div class="col-2"><h5 style="color: red;">&#8377; {{data['price'][i]*qty}}</h5></div>
+                        
                     </div>
-                </div>
-            </div>
-            <div class="col-2"><h5 style="color: orange;">&#8377; {{data['price'][i]}}</h5></div>
-            <div class="col-1" class="text-center"><h5>{{data['size'][i]}}</h5></div>
-            <div class="col-1" class="text-center"><h5>{{qty}}</h5></div>
-            <div class="col-2">
-                <a class="btn btn-danger small" href="#add_btn" data-toggle="modal" data-target="#add_btn">
-                    Cancel
-                </a>
-            </div>
+                    {% endfor %}
+                    </div>
+                   
+            
+            
+
         </div>
-        {% endfor %}
-        <hr>
-        <div class="text-center">
-            <a class="btn btn-success small" onClick="alert('Order Placed..COD available')" href="#add_btn" data-toggle="modal" data-target="#add_btn">
-                Place order
-            </a>
-                     
-            <a class="text-dark login_btn align-self-center mx-3" href="#myAdd_btn" data-toggle="modal" data-target="#myAdd_btn">
-                <i class="fas fa-microphone"></i>
-            </a>
-        </div>
-    </div>
 
 
 

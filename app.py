@@ -4,7 +4,7 @@ from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from functools import wraps
 from idiot import search
-from  search_cosine_similarity import cosine_similarity_T
+from search_cosine_similarity  import cosine_similarity_T
 import pandas as pd
 import numpy as np
 import random
@@ -25,26 +25,26 @@ def index():
 
 
 
-# @app.route('/voice',methods=['POST'])
-# def voice():
-#     query = request.form['voice_query'].lower()
-#     tokens = query.split()
-#     print(tokens)
-#     if "north" in tokens:
-#         if "east" in tokens or "eastern" in tokens:
-#             return redirect('http://localhost:5000/region/north-east')
-#         else:
-#             return redirect('http://localhost:5000/region/north')
-#     elif "west" in tokens or "western" in tokens:
-#         return redirect('http://localhost:5000/region/western')
-#     elif "south" in tokens or "southern" in tokens:
-#         return redirect('http://localhost:5000/region/south') 
-#     elif "east" in tokens or "eastern" in tokens:
-#         return redirect('http://localhost:5000/region/east')
-#     elif "northeastern" in tokens:
-#         return redirect('http://localhost:5000/region/north-east')
+@app.route('/voice',methods=['POST'])
+def voice():
+    query = request.form['voice_query'].lower()
+    tokens = query.split()
+    print(tokens)
+    if "north" in tokens:
+        if "east" in tokens or "eastern" in tokens:
+            return redirect('http://localhost:5000/region/north-east')
+        else:
+            return redirect('http://localhost:5000/region/north')
+    elif "west" in tokens or "western" in tokens:
+        return redirect('http://localhost:5000/region/western')
+    elif "south" in tokens or "southern" in tokens:
+        return redirect('http://localhost:5000/region/south') 
+    elif "east" in tokens or "eastern" in tokens:
+        return redirect('http://localhost:5000/region/east')
+    elif "northeastern" in tokens:
+        return redirect('http://localhost:5000/region/north-east')
     
-#     return render_template("home.html")
+    return render_template("home.html")
 
 
 def prodDetails(id):
@@ -69,24 +69,36 @@ def voice():
     
 
 
-@app.route('/add/<string:id>',methods=['POST'])
-def add(id):
+@app.route('/add/<string:id>/<string:q>',methods=['POST'])
+def add(id,q):
+    qty = int(q)
     query = request.form['add_query'].lower()
+
     details = prodDetails(id)
     print(query)
     tokens = query.split()
-    if "add" in tokens:
-        return render_template("add.html",data=details, qty=1)
-    # elif "place" in tokens:
-       
+    s = []
+    for t in tokens:
+        try:
+            s.append(int(t))
+        except ValueError:
+            pass
+    if "add"  in tokens:
+        return render_template("add.html",data=details, qty=qty)
+    elif "quantity" in tokens and s:
+        qty=s[0]
+        return render_template("add.html",data=details, qty=qty)
+    elif "place" in tokens or "complete" in tokens or "done" in tokens:
+        return render_template("order.html",data=details,qty=qty)
+
     
-    return render_template("single.html",data=details)
+    return render_template("single.html",data=details,qty=1)
     
 
 @app.route('/product/<string:id>',methods=['GET'])
 def giveProd(id):
     details = prodDetails(id)
-    return render_template("single.html",data=details)
+    return render_template("single.html",data=details,qty=1)
 
 
 
