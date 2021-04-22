@@ -47,25 +47,6 @@ def index():
 #     return render_template("home.html")
 
 
-@app.route('/voice',methods=['POST'])
-def voice():
-    query = request.form['voice_query'].lower()
-    print(query)
-    dataframe = cosine_similarity_T(50,query)
-    print(dataframe)
-    return render_template("results.html",data=dataframe)
-    
-
-
-@app.route('/add',methods=['POST'])
-def add():
-    query = request.form['add-query'].lower()
-    print(query)
-   
-    return render_template("home.html")
-    
-
-@app.route('/product/<string:id>',methods=['GET'])
 def prodDetails(id):
     df = pd.read_csv('Myntra_dataset.csv')
     # print(type(df['uniq_id'][0]))
@@ -75,7 +56,36 @@ def prodDetails(id):
     print(details)
     for i in details.index:
         details.loc[i,'price'] = random.randint(500, 5000)
+    return details
+
+
+@app.route('/voice',methods=['POST'])
+def voice():
+    query = request.form['voice_query'].lower()
+    print(query)
+    dataframe = cosine_similarity_T(10,query)
+    print(dataframe)
+    return render_template("results.html",data=dataframe)
     
+
+
+@app.route('/add/<string:id>',methods=['POST'])
+def add(id):
+    query = request.form['add_query'].lower()
+    details = prodDetails(id)
+    print(query)
+    tokens = query.split()
+    if "add" in tokens:
+        return render_template("add.html",data=details, qty=1)
+    # elif "place" in tokens:
+       
+    
+    return render_template("single.html",data=details)
+    
+
+@app.route('/product/<string:id>',methods=['GET'])
+def giveProd(id):
+    details = prodDetails(id)
     return render_template("single.html",data=details)
 
 
