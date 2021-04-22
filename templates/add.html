@@ -302,7 +302,7 @@
         {% endfor %}
         <hr>
         <div class="text-center">
-            <a class="btn btn-success small" href="#add_btn" data-toggle="modal" data-target="#add_btn">
+            <a class="btn btn-success small" onClick="alert('Oops! Banking Servers Unavailable. Please try after some time')" href="#add_btn" data-toggle="modal" data-target="#add_btn">
                 Place order
             </a>
                      
@@ -748,7 +748,7 @@
     
             });
         </script>
-    
+        
      <script src="{{ url_for('static' , filename='js/SmoothScroll.min.js')}}"></script>
         <!-- //smooth-scrolling-of-move-up -->
         <!-- Bootstrap core JavaScript
