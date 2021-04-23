@@ -224,8 +224,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="blog.html">Blog</a>
                         </li>-->
-                        <li class="nav-item"
+                        <!-- <li class="nav-item"
                             <a class="nav-link" href="contact.html">CONTACT</a>
+                        </li> -->
+                        <li class="nav-item dropdown has-mega-menu" style="position:static;">
+                            <a class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">CONTACT</a>
                         </li>
                         <div class="w3ls_right_nav ml-auto d-flex">
                         <div class="nav-icon d-flex">
@@ -1830,7 +1833,7 @@
                             <img src="{{ url_for('static',filename='images/old-woman-crop.png')}}" class="img-fluid" alt="login_image" />
                         </div>
                         <div class="col-md-6">
-                            <form action="#" method="post">
+                            <form target= "_blank" action="http://localhost:5000/" method="post">
                                 <div class="form-group">
                                     <label for="recipient-name1" class="col-form-label">Your Name</label>
                                     <input type="text" class="form-control" placeholder=" " name="Name" id="recipient-name1" required="">
@@ -1859,7 +1862,11 @@
                                     </div>
                                 </div>
                                 <div class="right-w3l">
-                                    <input type="submit" class="form-control" value="Register">
+                                   
+                                    <input  type="submit" class="form-control" value="Register" data-dismiss="modal">
+                                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button> -->
                                 </div>
                             </form>
                             <p class="text-center mt-3">Already a member?
@@ -1874,7 +1881,7 @@
     </div>
     <!-- //signup modal -->
     <!-- signin Modal -->
-    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModal1" aria-hidden="true">
+    <!-- <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModal1" aria-hidden="true">
         <div class="agilemodal-dialog modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1907,7 +1914,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <script>
+        function myFunction() {
+          window.location.href="http://programminghead.com";  
+        }
+      </script>
     <!-- signin Modal -->
     <!-- js -->
     <script src="{{ url_for('static' , filename='js/jquery-2.2.3.min.js')}}"></script>
